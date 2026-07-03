@@ -234,6 +234,307 @@
           </tr>
         </table>
 
+        <h3>Complete Dashboard Practical: Saare Topics Ka Output Page Par Dikhao</h3>
+        <p>Yeh practical aapke classroom ke liye best hai, kyunki isme har JavaScript topic ka output dashboard par visible hoga. Learners ko console open karne ki zaroorat nahi padegi. Aap button click karoge, aur output area mein result dikhega. Is dashboard mein syntax, variables, conditions, loops, functions, arrays, objects, DOM, and events sab cover honge.</p>
+        <p>Story type explanation: "Hum ek learning dashboard bana rahe hain. Har button ek topic represent karta hai. Jab button click hota hai, JavaScript us topic ka logic run karta hai aur output box mein result show karta hai. Isse samajh aata hai ki JavaScript real webpage ko live update kar sakta hai."</p>
+
+        <h4>Dashboard Folder Structure</h4>
+        <pre><code>javascript-dashboard-practical/
+  index.html
+  styles.css
+  script.js</code></pre>
+
+        <h4>index.html</h4>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;JavaScript Dashboard Practical&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main class="dashboard"&gt;
+    &lt;h1&gt;JavaScript Fundamentals Dashboard&lt;/h1&gt;
+    &lt;p class="intro"&gt;Click any button to see output.&lt;/p&gt;
+
+    &lt;section class="button-grid"&gt;
+      &lt;button id="syntaxBtn"&gt;Syntax&lt;/button&gt;
+      &lt;button id="variableBtn"&gt;Variables&lt;/button&gt;
+      &lt;button id="conditionBtn"&gt;Conditions&lt;/button&gt;
+      &lt;button id="loopBtn"&gt;Loops&lt;/button&gt;
+      &lt;button id="functionBtn"&gt;Functions&lt;/button&gt;
+      &lt;button id="arrayBtn"&gt;Arrays&lt;/button&gt;
+      &lt;button id="objectBtn"&gt;Objects&lt;/button&gt;
+      &lt;button id="domBtn"&gt;DOM&lt;/button&gt;
+    &lt;/section&gt;
+
+    &lt;section class="result-card"&gt;
+      &lt;h2&gt;Output Area&lt;/h2&gt;
+      &lt;p id="output"&gt;Output will appear here.&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h4>styles.css</h4>
+        <pre><code>body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef6ff;
+  color: #123047;
+}
+
+.dashboard {
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 28px;
+}
+
+h1 {
+  color: #1e40af;
+  text-align: center;
+}
+
+.intro {
+  text-align: center;
+  font-size: 18px;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 28px 0;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.result-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+#output {
+  background: #f8fbff;
+  border-left: 5px solid #2563eb;
+  padding: 16px;
+  min-height: 60px;
+}</code></pre>
+
+        <h4>script.js</h4>
+        <pre><code>let output = document.getElementById("output");
+
+document.getElementById("syntaxBtn").addEventListener("click", function () {
+  output.textContent = "Hello JavaScript. 10 + 5 = " + (10 + 5);
+});
+
+document.getElementById("variableBtn").addEventListener("click", function () {
+  let studentName = "Aman";
+  let age = 21;
+  output.textContent = studentName + " is " + age + " years old.";
+});
+
+document.getElementById("conditionBtn").addEventListener("click", function () {
+  let marks = 75;
+
+  if (marks &gt;= 40) {
+    output.textContent = "Student passed with " + marks + " marks.";
+  } else {
+    output.textContent = "Student failed.";
+  }
+});
+
+document.getElementById("loopBtn").addEventListener("click", function () {
+  let subjects = ["HTML", "CSS", "JavaScript"];
+  let result = "";
+
+  for (let subject of subjects) {
+    result = result + subject + " ";
+  }
+
+  output.textContent = "Subjects: " + result;
+});
+
+document.getElementById("functionBtn").addEventListener("click", function () {
+  function calculateTotal(price, quantity) {
+    return price * quantity;
+  }
+
+  output.textContent = "Total Bill: Rs. " + calculateTotal(500, 3);
+});
+
+document.getElementById("arrayBtn").addEventListener("click", function () {
+  let destinations = ["Manali", "Goa", "Jaipur"];
+  destinations.push("Kerala");
+  output.textContent = "Destinations: " + destinations.join(", ");
+});
+
+document.getElementById("objectBtn").addEventListener("click", function () {
+  let user = {
+    name: "Sara",
+    course: "JavaScript"
+  };
+
+  output.textContent = user.name + " is learning " + user.course;
+});
+
+document.getElementById("domBtn").addEventListener("click", function () {
+  output.textContent = "DOM changed this output text successfully.";
+  output.style.color = "green";
+});</code></pre>
+
+        <h4>How To Run Dashboard Practical</h4>
+        <table>
+          <tr>
+            <th>Step</th>
+            <th>Kya Karna Hai?</th>
+            <th>Simple Hinglish Explanation</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>VS Code mein <code>javascript-dashboard-practical</code> folder open karo.</td>
+            <td>Ye folder project ka main ghar hai. Teen files isi folder ke andar honi chahiye.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><code>index.html</code>, <code>styles.css</code>, <code>script.js</code> create karo.</td>
+            <td>HTML, CSS, and JavaScript ko separate rakhna professional habit hai.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Code ko correct files mein paste/type karo.</td>
+            <td>HTML code sirf HTML file mein, CSS code sirf CSS file mein, JS code sirf JS file mein.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><code>index.html</code> ko Live Server se open karo.</td>
+            <td>Right click on <code>index.html</code>, then <strong>Open with Live Server</strong>.</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Har button click karke output dikhao.</td>
+            <td>Output Area mein topic ka result show hoga. Isi result ko learners ko explain karo.</td>
+          </tr>
+        </table>
+
+        <h4>Dashboard Output And Teaching Explanation</h4>
+        <table>
+          <tr>
+            <th>Button</th>
+            <th>Expected Output</th>
+            <th>Students Ko Kaise Explain Karna Hai?</th>
+          </tr>
+          <tr>
+            <td>Syntax</td>
+            <td>Hello JavaScript. 10 + 5 = 15</td>
+            <td>JavaScript text and calculation dono handle kar sakta hai.</td>
+          </tr>
+          <tr>
+            <td>Variables</td>
+            <td>Aman is 21 years old.</td>
+            <td>Variables data store karte hain, jaise name and age.</td>
+          </tr>
+          <tr>
+            <td>Conditions</td>
+            <td>Student passed with 75 marks.</td>
+            <td>if/else decision leta hai: marks pass hain ya fail.</td>
+          </tr>
+          <tr>
+            <td>Loops</td>
+            <td>Subjects: HTML CSS JavaScript</td>
+            <td>Loop list ke har item par kaam karta hai.</td>
+          </tr>
+          <tr>
+            <td>Functions</td>
+            <td>Total Bill: Rs. 1500</td>
+            <td>Function reusable calculation machine hai.</td>
+          </tr>
+          <tr>
+            <td>Arrays</td>
+            <td>Destinations: Manali, Goa, Jaipur, Kerala</td>
+            <td>Array list store karta hai aur <code>push()</code> new item add karta hai.</td>
+          </tr>
+          <tr>
+            <td>Objects</td>
+            <td>Sara is learning JavaScript</td>
+            <td>Object key-value data store karta hai.</td>
+          </tr>
+          <tr>
+            <td>DOM</td>
+            <td>DOM changed this output text successfully.</td>
+            <td>JavaScript page ke HTML content and style ko change kar sakta hai.</td>
+          </tr>
+        </table>
+
+        <h4>Dashboard Code Explanation</h4>
+        <table>
+          <tr>
+            <th>Code</th>
+            <th>Detailed Simple Hinglish Explanation</th>
+          </tr>
+          <tr>
+            <td><code>&lt;main class="dashboard"&gt;</code></td>
+            <td>Complete dashboard content ka wrapper hai. CSS se isi wrapper ki width and spacing control hoti hai.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;section class="button-grid"&gt;</code></td>
+            <td>Saare topic buttons ko group karta hai. CSS Grid se ye buttons columns mein arrange honge.</td>
+          </tr>
+          <tr>
+            <td><code>id="syntaxBtn"</code></td>
+            <td>Button ki unique identity hai. JavaScript isi id se button ko select karke click event lagata hai.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;p id="output"&gt;</code></td>
+            <td>Yeh dashboard ka output box hai. Har button ka result yahin show hoga.</td>
+          </tr>
+          <tr>
+            <td><code>grid-template-columns: repeat(4, 1fr);</code></td>
+            <td>4 equal columns banata hai. Isse buttons dashboard style mein clean dikhte hain.</td>
+          </tr>
+          <tr>
+            <td><code>let output = document.getElementById("output");</code></td>
+            <td>Output paragraph ko JavaScript variable mein store karta hai. Ab JS easily uska text change kar sakta hai.</td>
+          </tr>
+          <tr>
+            <td><code>addEventListener("click", function () { ... })</code></td>
+            <td>Button click par function run karta hai. Yeh event handling ka core concept hai.</td>
+          </tr>
+          <tr>
+            <td><code>output.textContent = ...</code></td>
+            <td>Output paragraph ka visible text change karta hai. Yeh DOM manipulation hai.</td>
+          </tr>
+          <tr>
+            <td><code>for (let subject of subjects)</code></td>
+            <td>Array ke har subject par loop chalata hai. Har round mein ek subject output string mein add hota hai.</td>
+          </tr>
+          <tr>
+            <td><code>function calculateTotal(price, quantity)</code></td>
+            <td>Reusable function hai jo price and quantity receive karke total return karta hai.</td>
+          </tr>
+          <tr>
+            <td><code>destinations.join(", ")</code></td>
+            <td>Array ko comma-separated text mein convert karta hai, taaki output readable dikhe.</td>
+          </tr>
+          <tr>
+            <td><code>output.style.color = "green";</code></td>
+            <td>JavaScript se CSS style change karta hai. DOM output green color mein dikhega.</td>
+          </tr>
+        </table>
+
         <h3>Lab 1: Button Click Se Message Change Karna</h3>
         <p>Is practical mein learner samjhega ki HTML button par click karne se JavaScript page ka message change kar sakta hai. Yeh DOM manipulation and click event ka first practical hai.</p>
 

@@ -20,6 +20,9 @@
     <aside class="toc">
       <h2>Index</h2>
       <a href="#daily-plan">Daily Class Plan</a>
+      <a href="#web-roles">HTML vs CSS vs JS</a>
+      <a href="#why-js">Why JavaScript?</a>
+      <a href="#execute-js">How To Execute JS</a>
       <a href="#goal">Module Goal</a>
       <a href="#setup">VS Code Setup</a>
       <a href="#syntax">1. JavaScript Syntax</a>
@@ -132,6 +135,155 @@
         <div class="note">Daily class tip: Har practical ke baad browser refresh karke output dikhao. JavaScript mein output kabhi console mein dikhega, kabhi page par dikhega. Learners ko yeh difference clearly batana zaroori hai.</div>
       </section>
 
+      <section id="web-roles">
+        <h2>HTML, CSS, And JavaScript Mein Difference</h2>
+        <p>Web development ko ek real-world shop ki tarah samjho. HTML shop ka structure hai: gate, shelves, counter, product labels. CSS shop ka design hai: paint color, lighting, spacing, decoration, font style. JavaScript shop ka staff aur automation system hai: customer button press kare toh bill calculate ho, form fill kare toh error show ho, item add kare toh cart update ho.</p>
+        <p>Isliye HTML, CSS, and JavaScript teen alag roles play karte hain. HTML ke bina content nahi hota, CSS ke bina content plain dikhta hai, aur JavaScript ke bina page user ke action par smart response nahi deta. Learners ko yeh starting mein clear karna zaroori hai, kyunki beginner aksar confuse hota hai ki button HTML se banta hai, CSS se style hota hai, aur click ka kaam JavaScript se hota hai.</p>
+
+        <table>
+          <tr>
+            <th>Technology</th>
+            <th>Simple Meaning</th>
+            <th>Real Example</th>
+            <th>Project Mein Role</th>
+          </tr>
+          <tr>
+            <td>HTML</td>
+            <td>Website ka structure/content.</td>
+            <td>Heading, paragraph, form, button, image.</td>
+            <td>Registration form fields banana.</td>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td>Website ka design/look.</td>
+            <td>Color, spacing, card, layout, responsive design.</td>
+            <td>Form ko clean and attractive banana.</td>
+          </tr>
+          <tr>
+            <td>JavaScript</td>
+            <td>Website ka behavior/logic.</td>
+            <td>Button click, form validation, message update.</td>
+            <td>Blank input par error and valid input par success show karna.</td>
+          </tr>
+        </table>
+
+        <h3>Small Practical: Same Button Ke 3 Roles</h3>
+        <pre><code>&lt;button id="saveBtn" class="primary-btn"&gt;Save&lt;/button&gt;</code></pre>
+        <table>
+          <tr>
+            <th>Part</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>&lt;button&gt;</code></td>
+            <td>HTML button create karta hai. Yeh page par actual clickable element banata hai.</td>
+          </tr>
+          <tr>
+            <td><code>class="primary-btn"</code></td>
+            <td>CSS ke liye class hai. Is class se button ka color, padding, border-radius, and font style set kar sakte hain.</td>
+          </tr>
+          <tr>
+            <td><code>id="saveBtn"</code></td>
+            <td>JavaScript ke liye unique id hai. JS isi id se button ko select karke click event attach karega.</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="why-js">
+        <h2>JavaScript Kyu Use Karte Hain?</h2>
+        <p>JavaScript ka main kaam page ko interactive banana hai. Agar website sirf information show kare, toh HTML and CSS enough ho sakte hain. Lekin jaise hi user ke action par page ko response dena ho, JavaScript chahiye. Example: user ne password chhota type kiya toh error show karna, button click par popup open karna, quantity change par total price update karna, search box mein type karte hi results filter karna.</p>
+        <p>Story type samjho: ek restaurant menu HTML se ban gaya, CSS se beautiful dikhta hai. Lekin agar customer item select kare aur total bill automatically calculate ho, toh JavaScript chahiye. JavaScript browser ke andar run hota hai, isliye user ko instant feedback milta hai bina page reload ke.</p>
+
+        <table>
+          <tr>
+            <th>JavaScript Use Case</th>
+            <th>Simple Explanation</th>
+            <th>Example Output</th>
+          </tr>
+          <tr>
+            <td>Form Validation</td>
+            <td>Submit se pehle input check karna.</td>
+            <td>Please enter your email.</td>
+          </tr>
+          <tr>
+            <td>DOM Update</td>
+            <td>Page ka text/style dynamically change karna.</td>
+            <td>Heading change after button click.</td>
+          </tr>
+          <tr>
+            <td>Event Handling</td>
+            <td>User action par code run karna.</td>
+            <td>Click, input, submit, hover.</td>
+          </tr>
+          <tr>
+            <td>Client-Side Logic</td>
+            <td>Browser mein calculation/decision karna.</td>
+            <td>Cart total update.</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="execute-js">
+        <h2>JavaScript Ko Execute Kaise Karte Hain?</h2>
+        <p>JavaScript execute karne ka simple meaning hai JavaScript code ko run karna. Browser JavaScript engine ke through code run karta hai. Chrome browser mein V8 engine hota hai. Beginners ke liye easiest method hai: VS Code mein files banao, HTML file browser mein open karo, and JavaScript output Console ya page par dekho.</p>
+
+        <h3>Method 1: Browser Console</h3>
+        <p>Chrome open karo, right click karo, Inspect par click karo, Console tab open karo. Yahan direct JavaScript likh sakte ho. Yeh quick testing ke liye useful hai.</p>
+        <pre><code>console.log("Testing JavaScript in browser console");</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>console.log(...)</code></td>
+            <td>Console mein message print karta hai. Browser console beginner ka testing notebook hota hai.</td>
+          </tr>
+        </table>
+
+        <h3>Method 2: Internal JavaScript</h3>
+        <p>Internal JavaScript ka matlab HTML file ke andar <code>&lt;script&gt;</code> tag mein JS likhna. Small demo ke liye useful hai, but large project mein external JS file better hoti hai.</p>
+        <pre><code>&lt;script&gt;
+  console.log("Internal JavaScript is running");
+&lt;/script&gt;</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>&lt;script&gt;</code></td>
+            <td>Browser ko batata hai ki ab JavaScript code start ho raha hai.</td>
+          </tr>
+          <tr>
+            <td><code>console.log("Internal...")</code></td>
+            <td>HTML ke andar likha JavaScript console mein message show karega.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;/script&gt;</code></td>
+            <td>JavaScript block close karta hai.</td>
+          </tr>
+        </table>
+
+        <h3>Method 3: External JavaScript File</h3>
+        <p>External JavaScript professional method hai. HTML file clean rehti hai aur JavaScript separate <code>script.js</code> file mein rehta hai. Real projects mein yahi approach follow karna best hai.</p>
+        <pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>src="script.js"</code></td>
+            <td><code>src</code> JavaScript file ka path batata hai. Agar file same folder mein hai, toh direct <code>script.js</code> likhenge.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;/script&gt;</code></td>
+            <td>Script tag close karna zaroori hai. External script tag ke andar code nahi likhte.</td>
+          </tr>
+        </table>
+      </section>
+
       <section id="goal">
         <h2>Module Goal</h2>
         <p>Is module ka goal hai learners ko JavaScript ka foundation samjhana. HTML page ka structure banata hai, CSS usko design deta hai, aur JavaScript page ko interactive banata hai. Simple words mein: HTML body hai, CSS dressing hai, aur JavaScript brain hai jo page ko user ke action ke according react karna sikhata hai.</p>
@@ -239,6 +391,41 @@ console.log(10 + 5);</code></pre>
         <h3>How To Run</h3>
         <p>VS Code mein <code>script.js</code> file banao, code likho, phir <code>index.html</code> mein script file connect karo. Browser open karke right click Inspect karo, Console tab mein output dikhega.</p>
         <pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+        <h3>Practical 2: Alert Message</h3>
+        <p><code>alert()</code> browser mein popup message show karta hai. Isko beginners ko event ya warning samjhane ke liye use kar sakte ho. Real websites mein alert zyada professional nahi hota, but learning ke liye useful hai.</p>
+        <pre><code>alert("Welcome to JavaScript class");</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>alert(...)</code></td>
+            <td>Browser popup box show karta hai. User ko OK click karna padta hai. Isse learner ko immediately dikhta hai ki JavaScript page par action trigger kar sakta hai.</td>
+          </tr>
+          <tr>
+            <td><code>"Welcome to JavaScript class"</code></td>
+            <td>Popup ke andar show hone wala text hai. Quotes ke andar likha text string hota hai.</td>
+          </tr>
+        </table>
+
+        <h3>Practical 3: Write Output On Page</h3>
+        <p><code>document.write()</code> page par direct output likhta hai. Iska use sirf beginner demo ke liye samjhao. Real projects mein DOM methods better hote hain.</p>
+        <pre><code>document.write("JavaScript is connected successfully");</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>document</code></td>
+            <td>Current HTML page ko represent karta hai. JavaScript browser ke document se baat kar rahi hai.</td>
+          </tr>
+          <tr>
+            <td><code>write(...)</code></td>
+            <td>Page par content write karta hai. Beginner ko output page par dikhane ke liye simple method hai.</td>
+          </tr>
+        </table>
         <h3>Class Practice Task</h3>
         <p>Students se <code>console.log()</code> ka use karke apna naam, apna course name, and ek simple calculation print karwao. Example: <code>console.log("My name is Aman")</code> and <code>console.log(20 + 30)</code>. Isse unko console output ka confidence aayega.</p>
       </section>
@@ -318,6 +505,60 @@ console.log(isEnrolled);</code></pre>
             <td>Har variable ki current value console mein print karega. Isse developer verify karta hai ki data properly store hua ya nahi.</td>
           </tr>
         </table>
+        <h3>Practical 2: Check Data Type Using <code>typeof</code></h3>
+        <p><code>typeof</code> JavaScript ka operator hai jo batata hai value kis type ki hai. Beginners ko string and number ka difference clear karne ke liye yeh practical very useful hai.</p>
+        <pre><code>let price = 999;
+let userName = "Riya";
+let isLoggedIn = false;
+
+console.log(typeof price);
+console.log(typeof userName);
+console.log(typeof isLoggedIn);</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>let price = 999;</code></td>
+            <td>Number value store hui. Quotes nahi hain, isliye JavaScript isko number type samjhega.</td>
+          </tr>
+          <tr>
+            <td><code>let userName = "Riya";</code></td>
+            <td>Text value store hui. Quotes ke andar hone ki wajah se yeh string hai.</td>
+          </tr>
+          <tr>
+            <td><code>let isLoggedIn = false;</code></td>
+            <td>Boolean value store hui. Yeh true/false type decision ke liye use hota hai.</td>
+          </tr>
+          <tr>
+            <td><code>typeof price</code></td>
+            <td>Console mein <code>number</code> output karega. Isse type verify hota hai.</td>
+          </tr>
+        </table>
+
+        <h3>Practical 3: Updating <code>let</code> Value</h3>
+        <pre><code>let score = 10;
+score = 20;
+console.log(score);</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>let score = 10;</code></td>
+            <td>Score variable initially 10 store karta hai.</td>
+          </tr>
+          <tr>
+            <td><code>score = 20;</code></td>
+            <td>Same variable ki value update ho gayi. <code>let</code> allow karta hai ki value change ho.</td>
+          </tr>
+          <tr>
+            <td><code>console.log(score);</code></td>
+            <td>Updated value print hogi: <code>20</code>.</td>
+          </tr>
+        </table>
         <h3>Class Practice Task</h3>
         <p>Students se 4 variables banwao: <code>studentName</code>, <code>studentAge</code>, <code>courseName</code>, and <code>isActive</code>. Phir in sabko console mein print karwao. Is task ka goal hai ki learner samjhe kaunsi value quotes mein likhni hai aur kaunsi value without quotes likhni hai.</p>
       </section>
@@ -358,6 +599,65 @@ if (userAge >= 18) {
         </table>
 
         <div class="note">Teaching story: condition ko security guard ki tarah samjhao. Guard pehle check karega: ticket hai ya nahi? Agar ticket hai toh entry, warna stop.</div>
+        <h3>Practical 2: Traffic Light Decision</h3>
+        <pre><code>let signal = "green";
+
+if (signal === "red") {
+  console.log("Stop");
+} else if (signal === "yellow") {
+  console.log("Get ready");
+} else {
+  console.log("Go");
+}</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>let signal = "green";</code></td>
+            <td>Signal ki current value store hui. Real app mein yeh value sensor/API/user selection se aa sakti hai.</td>
+          </tr>
+          <tr>
+            <td><code>signal === "red"</code></td>
+            <td>Strict comparison hai. Value aur type dono compare karta hai. Agar signal red hota toh Stop print hota.</td>
+          </tr>
+          <tr>
+            <td><code>else if</code></td>
+            <td>Multiple conditions check karne ke liye use hota hai. Pehli condition false ho toh next condition check hoti hai.</td>
+          </tr>
+          <tr>
+            <td><code>else</code></td>
+            <td>Jab upar ki conditions false ho jaati hain, tab final fallback run hota hai. Yahan green ke liye Go print hoga.</td>
+          </tr>
+        </table>
+
+        <h3>Practical 3: Login Status Check</h3>
+        <pre><code>let isLoggedIn = true;
+
+if (isLoggedIn) {
+  console.log("Show dashboard");
+} else {
+  console.log("Show login page");
+}</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>let isLoggedIn = true;</code></td>
+            <td>Boolean value hai. True ka matlab user already login hai.</td>
+          </tr>
+          <tr>
+            <td><code>if (isLoggedIn)</code></td>
+            <td>Boolean ko directly condition mein use kar sakte hain. Agar true hai toh dashboard show hoga.</td>
+          </tr>
+          <tr>
+            <td><code>else</code></td>
+            <td>Agar user logged in nahi hai, toh login page show karna chahiye.</td>
+          </tr>
+        </table>
         <h3>Class Practice Task</h3>
         <p>Students se marks check program banwao. Agar marks 40 ya usse zyada hain toh <code>Pass</code> print ho, warna <code>Fail</code> print ho. Phir marks value change karke dono outputs test karwao.</p>
       </section>
@@ -400,6 +700,60 @@ for (let i = 0; i &lt; subjects.length; i++) {
           <tr>
             <td><code>subjects[i]</code></td>
             <td>Current index ka subject access karta hai. Pehle round mein <code>subjects[0]</code> = HTML, second mein CSS, third mein JavaScript.</td>
+          </tr>
+        </table>
+        <h3>Practical 2: Countdown Using Loop</h3>
+        <pre><code>for (let count = 5; count &gt;= 1; count--) {
+  console.log("Countdown: " + count);
+}</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>let count = 5</code></td>
+            <td>Countdown 5 se start hoga. Yeh loop ka starting point hai.</td>
+          </tr>
+          <tr>
+            <td><code>count &gt;= 1</code></td>
+            <td>Loop tab tak chalega jab tak count 1 ya usse zyada hai.</td>
+          </tr>
+          <tr>
+            <td><code>count--</code></td>
+            <td>Har round ke baad count 1 se kam hota jayega: 5, 4, 3, 2, 1.</td>
+          </tr>
+          <tr>
+            <td><code>"Countdown: " + count</code></td>
+            <td>Text and current count value ko join karke output banata hai.</td>
+          </tr>
+        </table>
+
+        <h3>Practical 3: Cart Total Using Loop</h3>
+        <pre><code>let prices = [100, 250, 150];
+let total = 0;
+
+for (let i = 0; i &lt; prices.length; i++) {
+  total = total + prices[i];
+}
+
+console.log(total);</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>let prices = [100, 250, 150];</code></td>
+            <td>Cart items ke prices array mein store hue.</td>
+          </tr>
+          <tr>
+            <td><code>let total = 0;</code></td>
+            <td>Total initially zero hai. Loop har price add karega.</td>
+          </tr>
+          <tr>
+            <td><code>total = total + prices[i];</code></td>
+            <td>Current item price total mein add hota hai. End mein total 500 hoga.</td>
           </tr>
         </table>
         <h3>Class Practice Task</h3>
@@ -445,6 +799,58 @@ console.log(billAmount);</code></pre>
             <td>Function call hai. <code>500</code> price banega and <code>3</code> quantity banegi. Output <code>1500</code> hoga.</td>
           </tr>
         </table>
+        <h3>Practical 2: Greeting Function</h3>
+        <pre><code>function greetUser(name) {
+  return "Hello, " + name;
+}
+
+console.log(greetUser("Aman"));</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>function greetUser(name)</code></td>
+            <td>Function create hua jo ek input <code>name</code> receive karega. Real app mein yeh user dashboard greeting ke liye use ho sakta hai.</td>
+          </tr>
+          <tr>
+            <td><code>return "Hello, " + name;</code></td>
+            <td>Fixed text and user name ko join karke final greeting return karta hai.</td>
+          </tr>
+          <tr>
+            <td><code>greetUser("Aman")</code></td>
+            <td>Function call hai. <code>"Aman"</code> argument function ke <code>name</code> parameter mein jayega.</td>
+          </tr>
+        </table>
+
+        <h3>Practical 3: Scope Example</h3>
+        <pre><code>let appName = "Learning App";
+
+function showAppName() {
+  let message = "Welcome to " + appName;
+  console.log(message);
+}
+
+showAppName();</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>let appName = "Learning App";</code></td>
+            <td>Function ke bahar variable hai, isliye function ke andar access ho sakta hai. Isko outer/global scope samjha sakte hain.</td>
+          </tr>
+          <tr>
+            <td><code>let message = ...</code></td>
+            <td>Function ke andar local variable hai. Yeh sirf function ke andar safely use hota hai.</td>
+          </tr>
+          <tr>
+            <td><code>showAppName();</code></td>
+            <td>Function ko run karta hai. Function define karne se code run nahi hota, call karna zaroori hai.</td>
+          </tr>
+        </table>
         <h3>Class Practice Task</h3>
         <p>Students se <code>calculateDiscount(price, discount)</code> function banwao. Function price and discount receive kare, discount amount calculate kare, and final price return kare. Isse function input, calculation, and return value clear hoga.</p>
       </section>
@@ -479,6 +885,49 @@ console.log(destinations.length);</code></pre>
           <tr>
             <td><code>destinations.length</code></td>
             <td>Array mein total items count karta hai. Kerala add hone ke baad length 4 hogi.</td>
+          </tr>
+        </table>
+        <h3>Practical 2: Remove Last Item Using <code>pop()</code></h3>
+        <pre><code>let tasks = ["Study", "Practice", "Submit"];
+tasks.pop();
+console.log(tasks);</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>let tasks = [...]</code></td>
+            <td>Tasks ki list array mein store hui. To-do app mein tasks usually array mein manage hote hain.</td>
+          </tr>
+          <tr>
+            <td><code>tasks.pop();</code></td>
+            <td>Array ke last item ko remove karta hai. Yahan <code>Submit</code> remove ho jayega.</td>
+          </tr>
+          <tr>
+            <td><code>console.log(tasks);</code></td>
+            <td>Updated array print karega: Study and Practice remain karenge.</td>
+          </tr>
+        </table>
+
+        <h3>Practical 3: Loop Through Array</h3>
+        <pre><code>let skills = ["HTML", "CSS", "JavaScript"];
+
+for (let skill of skills) {
+  console.log(skill);
+}</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>for (let skill of skills)</code></td>
+            <td><code>for...of</code> array ke items par directly loop chalata hai. Yeh readable syntax hai.</td>
+          </tr>
+          <tr>
+            <td><code>console.log(skill);</code></td>
+            <td>Har round mein current skill print hogi: HTML, CSS, JavaScript.</td>
           </tr>
         </table>
         <h3>Class Practice Task</h3>
@@ -518,6 +967,50 @@ console.log(user.email);</code></pre>
           <tr>
             <td><code>user.name</code></td>
             <td>Dot notation se object property access hoti hai. Output <code>Sara</code> hoga.</td>
+          </tr>
+        </table>
+        <h3>Practical 2: Update Object Property</h3>
+        <pre><code>let product = {
+  name: "Keyboard",
+  price: 1200
+};
+
+product.price = 999;
+console.log(product.price);</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>product.price = 999;</code></td>
+            <td>Object ki existing property update karta hai. E-commerce app mein sale price update karne jaisa example hai.</td>
+          </tr>
+          <tr>
+            <td><code>console.log(product.price);</code></td>
+            <td>Updated price print karega: <code>999</code>.</td>
+          </tr>
+        </table>
+
+        <h3>Practical 3: Object Inside Array</h3>
+        <pre><code>let students = [
+  { name: "Aman", marks: 85 },
+  { name: "Riya", marks: 92 }
+];
+
+console.log(students[0].name);</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>let students = [ ... ]</code></td>
+            <td>Array ke andar multiple student objects store hain. Real apps mein database se data aise hi structured form mein aa sakta hai.</td>
+          </tr>
+          <tr>
+            <td><code>students[0].name</code></td>
+            <td>Array ke first object ka <code>name</code> access karta hai. Output <code>Aman</code> hoga.</td>
           </tr>
         </table>
         <h3>Class Practice Task</h3>
@@ -566,6 +1059,46 @@ changeBtn.addEventListener("click", function () {
           <button id="changeBtn">Change Message</button>
           <div class="output">Button click karne par heading text change hoga.</div>
         </div>
+        <h3>Practical 2: Change Style With JavaScript</h3>
+        <pre><code>let title = document.getElementById("message");
+title.style.color = "blue";
+title.style.backgroundColor = "yellow";</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>document.getElementById("message")</code></td>
+            <td>HTML heading ko id se select karta hai. Pehle element pakdo, phir usko change karo.</td>
+          </tr>
+          <tr>
+            <td><code>title.style.color = "blue";</code></td>
+            <td>Selected heading ka text color blue karta hai. JavaScript CSS style dynamically change kar sakta hai.</td>
+          </tr>
+          <tr>
+            <td><code>backgroundColor</code></td>
+            <td>JavaScript mein CSS property <code>background-color</code> camelCase mein <code>backgroundColor</code> likhte hain.</td>
+          </tr>
+        </table>
+
+        <h3>Practical 3: Add New Content</h3>
+        <pre><code>let box = document.getElementById("message");
+box.innerHTML = "&lt;span&gt;New content added&lt;/span&gt;";</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>innerHTML</code></td>
+            <td>Element ke andar HTML content set karta hai. Agar tags ke saath content add karna ho, <code>innerHTML</code> use hota hai.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;span&gt;...</code></td>
+            <td>New HTML span content heading ke andar add hoga. Isse DOM ke through HTML update samajh aata hai.</td>
+          </tr>
+        </table>
         <h3>Class Practice Task</h3>
         <p>Students se ek aur button add karwao jiska text ho <code>Show Offer</code>. Button click par paragraph ka text change ho: <code>Today only: 20% discount</code>. Isse DOM selection and text update ka practice hoga.</p>
       </section>
@@ -632,6 +1165,52 @@ nameInput.addEventListener("input", function () {
           </div>
           <div id="preview" class="output">Your name will appear here</div>
         </div>
+        <h3>Practical 2: Mouse Event</h3>
+        <pre><code>let box = document.getElementById("preview");
+
+box.addEventListener("mouseover", function () {
+  box.textContent = "Mouse is on the box";
+});</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>mouseover</code></td>
+            <td>Jab mouse element ke upar aata hai, tab yeh event run hota hai. Hover effects ke liye useful hai.</td>
+          </tr>
+          <tr>
+            <td><code>function () { ... }</code></td>
+            <td>Event hone par chalne wala callback function hai.</td>
+          </tr>
+        </table>
+
+        <h3>Practical 3: Button Click Counter</h3>
+        <pre><code>let count = 0;
+
+button.addEventListener("click", function () {
+  count++;
+  console.log("Clicked " + count + " times");
+});</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>let count = 0;</code></td>
+            <td>Click count initially zero hai.</td>
+          </tr>
+          <tr>
+            <td><code>count++;</code></td>
+            <td>Har click par count 1 se badhta hai.</td>
+          </tr>
+          <tr>
+            <td><code>"Clicked " + count + " times"</code></td>
+            <td>Current count ko text ke saath combine karke console mein output deta hai.</td>
+          </tr>
+        </table>
         <h3>Class Practice Task</h3>
         <p>Students se live city preview banwao. Ek input field ho jisme user city type kare. Neeche output aaye: <code>You selected: Delhi</code>. Isse <code>input</code> event and <code>.value</code> ka use revise hoga.</p>
       </section>
@@ -667,6 +1246,55 @@ nameInput.addEventListener("input", function () {
             <td>DOM Update</td>
             <td>User ko result kaise dikhana hai?</td>
             <td>Message box mein success/error show karo.</td>
+          </tr>
+        </table>
+        <h3>Practical 1: Password Rule Planning</h3>
+        <pre><code>let password = "abc12";
+
+if (password.length &lt; 6) {
+  console.log("Weak password");
+} else {
+  console.log("Strong password");
+}</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>let password = "abc12";</code></td>
+            <td>User ka entered password variable mein store hua. Real form mein yeh input field se aayega.</td>
+          </tr>
+          <tr>
+            <td><code>password.length &lt; 6</code></td>
+            <td>Password ke characters count karta hai. Agar 6 se kam hai toh weak maana gaya.</td>
+          </tr>
+          <tr>
+            <td><code>console.log("Weak password")</code></td>
+            <td>Invalid condition ke case mein warning output deta hai.</td>
+          </tr>
+        </table>
+
+        <h3>Practical 2: Email Rule Planning</h3>
+        <pre><code>let email = "studentgmail.com";
+
+if (email.includes("@")) {
+  console.log("Valid email");
+} else {
+  console.log("Invalid email");
+}</code></pre>
+        <table>
+          <tr>
+            <th>Line / Code</th>
+            <th>Detailed Explanation</th>
+          </tr>
+          <tr>
+            <td><code>email.includes("@")</code></td>
+            <td>Email string ke andar <code>@</code> character search karta hai. Basic email validation ke liye simple rule hai.</td>
+          </tr>
+          <tr>
+            <td><code>else</code></td>
+            <td>Agar @ nahi mila toh invalid email message show hoga.</td>
           </tr>
         </table>
         <h3>Class Practice Task</h3>

@@ -167,6 +167,343 @@
         </table>
       </section>
 
+      <section id="html-css-js-labs">
+        <h2>HTML + CSS + JavaScript Practical Labs</h2>
+        <p>Ab hum JavaScript ko HTML and CSS ke saath practically connect karke samjhenge. Yeh part learners ke liye bahut important hai, kyunki real website mein JavaScript akela nahi hota. HTML element banata hai, CSS usko design karta hai, aur JavaScript us element ko interactive banata hai.</p>
+        <p>Class mein aap aise explain kar sakte ho: "HTML se hum button/input/message area banayenge. CSS se usko clean card design denge. JavaScript se hum user action par page ko change karenge. Matlab teenon milkar real web app banate hain."</p>
+
+        <h3>Common Folder Setup For All Labs</h3>
+        <pre><code>js-practical-lab/
+  index.html
+  styles.css
+  script.js</code></pre>
+        <table>
+          <tr>
+            <th>File</th>
+            <th>Kya Likhenge?</th>
+            <th>Simple Explanation</th>
+          </tr>
+          <tr>
+            <td><code>index.html</code></td>
+            <td>Page structure: heading, input, button, output area.</td>
+            <td>HTML page par visible elements banata hai.</td>
+          </tr>
+          <tr>
+            <td><code>styles.css</code></td>
+            <td>Design: card, color, spacing, button style.</td>
+            <td>CSS page ko readable and professional banata hai.</td>
+          </tr>
+          <tr>
+            <td><code>script.js</code></td>
+            <td>Logic: click, input, validation, DOM update.</td>
+            <td>JavaScript page ko user action ke according react karata hai.</td>
+          </tr>
+        </table>
+
+        <h3>Run Guide: Har Lab Ko Kaise Run Karna Hai</h3>
+        <table>
+          <tr>
+            <th>Step</th>
+            <th>Action</th>
+            <th>Detail Explanation</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>VS Code mein folder open karo.</td>
+            <td><code>js-practical-lab</code> folder open karo. Isi folder mein teen files rahengi.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Files create karo.</td>
+            <td><code>index.html</code>, <code>styles.css</code>, and <code>script.js</code> create karo.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Code paste/type karo.</td>
+            <td>HTML code <code>index.html</code> mein, CSS code <code>styles.css</code> mein, JavaScript code <code>script.js</code> mein likho.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>HTML file run karo.</td>
+            <td>VS Code Live Server use karo: right click on <code>index.html</code> and choose <strong>Open with Live Server</strong>.</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Output test karo.</td>
+            <td>Button click karo, input type karo, form submit karo. Page ka response observe karo.</td>
+          </tr>
+        </table>
+
+        <h3>Lab 1: Button Click Se Message Change Karna</h3>
+        <p>Is practical mein learner samjhega ki HTML button par click karne se JavaScript page ka message change kar sakta hai. Yeh DOM manipulation and click event ka first practical hai.</p>
+
+        <h4>index.html</h4>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Button Message Demo&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="card"&gt;
+    &lt;h1&gt;JavaScript Button Demo&lt;/h1&gt;
+    &lt;p id="message"&gt;Click the button to change this message.&lt;/p&gt;
+    &lt;button id="changeBtn"&gt;Change Message&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+        <h4>styles.css</h4>
+        <pre><code>body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef6ff;
+  color: #123047;
+}
+
+.card {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}</code></pre>
+
+        <h4>script.js</h4>
+        <pre><code>let message = document.getElementById("message");
+let changeBtn = document.getElementById("changeBtn");
+
+changeBtn.addEventListener("click", function () {
+  message.textContent = "Message changed using JavaScript.";
+});</code></pre>
+
+        <h4>Expected Output</h4>
+        <p>Browser mein ek white card dikhega. Card ke andar heading, message, and button hoga. Jab learner button click karega, paragraph ka text change hokar <code>Message changed using JavaScript.</code> ho jayega.</p>
+
+        <h4>Code Explanation</h4>
+        <table>
+          <tr>
+            <th>Code</th>
+            <th>Detailed Simple Hinglish Explanation</th>
+          </tr>
+          <tr>
+            <td><code>&lt;p id="message"&gt;</code></td>
+            <td>Yeh paragraph message show karta hai. <code>id="message"</code> JavaScript ko is paragraph ko select karne ke liye diya gaya hai.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;button id="changeBtn"&gt;</code></td>
+            <td>Button create karta hai. <code>id="changeBtn"</code> se JavaScript button ko find karega.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;script src="script.js"&gt;</code></td>
+            <td>HTML file ko JavaScript file se connect karta hai. Yeh line missing hogi toh JS code run nahi hoga.</td>
+          </tr>
+          <tr>
+            <td><code>.card</code></td>
+            <td>CSS class hai jo content ko card design deti hai: white background, shadow, rounded corners, and spacing.</td>
+          </tr>
+          <tr>
+            <td><code>document.getElementById("message")</code></td>
+            <td>HTML page se <code>message</code> id wala paragraph select karta hai.</td>
+          </tr>
+          <tr>
+            <td><code>addEventListener("click", ...)</code></td>
+            <td>Button par click event listen karta hai. Jab click hota hai, andar wala function run hota hai.</td>
+          </tr>
+          <tr>
+            <td><code>message.textContent = ...</code></td>
+            <td>Paragraph ka text update karta hai. Yeh DOM update ka practical example hai.</td>
+          </tr>
+        </table>
+
+        <h3>Lab 2: Live Input Preview</h3>
+        <p>Is practical mein user input field mein naam type karega aur neeche live greeting show hogi. Isse learners ko <code>input</code> event and <code>.value</code> ka use clear hoga.</p>
+
+        <h4>index.html</h4>
+        <pre><code>&lt;div class="card"&gt;
+  &lt;h1&gt;Live Name Preview&lt;/h1&gt;
+  &lt;input id="nameInput" type="text" placeholder="Enter your name"&gt;
+  &lt;p id="preview"&gt;Your greeting will appear here.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+
+        <h4>styles.css</h4>
+        <pre><code>input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#preview {
+  margin-top: 18px;
+  font-weight: bold;
+  color: #2563eb;
+}</code></pre>
+
+        <h4>script.js</h4>
+        <pre><code>let nameInput = document.getElementById("nameInput");
+let preview = document.getElementById("preview");
+
+nameInput.addEventListener("input", function () {
+  preview.textContent = "Hello, " + nameInput.value;
+});</code></pre>
+
+        <h4>Expected Output</h4>
+        <p>Input field mein jaise hi learner naam type karega, neeche text live update hoga. Example: agar user <code>Aman</code> type karega, output hoga <code>Hello, Aman</code>.</p>
+
+        <h4>Code Explanation</h4>
+        <table>
+          <tr>
+            <th>Code</th>
+            <th>Detailed Simple Hinglish Explanation</th>
+          </tr>
+          <tr>
+            <td><code>&lt;input id="nameInput"&gt;</code></td>
+            <td>User se name input lene ke liye input field banata hai. JavaScript iski typed value read karega.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;p id="preview"&gt;</code></td>
+            <td>Output/greeting show karne ke liye paragraph hai.</td>
+          </tr>
+          <tr>
+            <td><code>width: 100%;</code></td>
+            <td>Input field card ki full width le leti hai, jisse UI clean dikhta hai.</td>
+          </tr>
+          <tr>
+            <td><code>nameInput.value</code></td>
+            <td>User ne input mein jo current text type kiya hai, usko read karta hai.</td>
+          </tr>
+          <tr>
+            <td><code>addEventListener("input", ...)</code></td>
+            <td>Jab bhi user input mein type karega, function automatically run hoga.</td>
+          </tr>
+        </table>
+
+        <h3>Lab 3: Form Validation With HTML, CSS, And JavaScript</h3>
+        <p>Is practical mein complete mini form banega. HTML form fields banayega, CSS form ko design karega, aur JavaScript validation rules apply karega. Yeh real-world signup form ka simple version hai.</p>
+
+        <h4>index.html</h4>
+        <pre><code>&lt;form id="signupForm" class="card"&gt;
+  &lt;h1&gt;Create Account&lt;/h1&gt;
+
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input id="email" type="email" placeholder="Enter email"&gt;
+
+  &lt;label for="password"&gt;Password&lt;/label&gt;
+  &lt;input id="password" type="password" placeholder="Enter password"&gt;
+
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+  &lt;p id="message"&gt;&lt;/p&gt;
+&lt;/form&gt;
+
+&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+
+        <h4>styles.css</h4>
+        <pre><code>label {
+  display: block;
+  margin-top: 14px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+#message {
+  font-weight: bold;
+}</code></pre>
+
+        <h4>script.js</h4>
+        <pre><code>let signupForm = document.getElementById("signupForm");
+let email = document.getElementById("email");
+let password = document.getElementById("password");
+let message = document.getElementById("message");
+
+signupForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  if (!email.value.includes("@")) {
+    message.textContent = "Please enter a valid email.";
+    message.style.color = "red";
+    return;
+  }
+
+  if (password.value.length &lt; 6) {
+    message.textContent = "Password must be at least 6 characters.";
+    message.style.color = "red";
+    return;
+  }
+
+  message.textContent = "Form submitted successfully.";
+  message.style.color = "green";
+});</code></pre>
+
+        <h4>Expected Output</h4>
+        <p>Agar email mein <code>@</code> nahi hoga toh red error message show hoga. Agar password 6 characters se chhota hoga toh password error show hoga. Agar dono valid hain toh green success message show hoga.</p>
+
+        <h4>Code Explanation</h4>
+        <table>
+          <tr>
+            <th>Code</th>
+            <th>Detailed Simple Hinglish Explanation</th>
+          </tr>
+          <tr>
+            <td><code>&lt;form id="signupForm"&gt;</code></td>
+            <td>Signup form start karta hai. JavaScript form submit event isi id se handle karega.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;label for="email"&gt;</code></td>
+            <td>Label email input se connected hai. Accessibility and readability ke liye label important hota hai.</td>
+          </tr>
+          <tr>
+            <td><code>type="password"</code></td>
+            <td>Password field typed text ko hide karta hai. Real forms mein password ke liye yeh use hota hai.</td>
+          </tr>
+          <tr>
+            <td><code>event.preventDefault()</code></td>
+            <td>Default form submit/page reload ko stop karta hai. Isse validation message page par visible rehta hai.</td>
+          </tr>
+          <tr>
+            <td><code>!email.value.includes("@")</code></td>
+            <td>Check karta hai email mein <code>@</code> nahi hai. <code>!</code> ka matlab not hota hai.</td>
+          </tr>
+          <tr>
+            <td><code>password.value.length &lt; 6</code></td>
+            <td>Password ke characters count karta hai. Agar 6 se kam hain toh error show hota hai.</td>
+          </tr>
+          <tr>
+            <td><code>return;</code></td>
+            <td>Function ko wahi stop kar deta hai. Agar error mil gaya toh aage success message run nahi hona chahiye.</td>
+          </tr>
+          <tr>
+            <td><code>message.style.color</code></td>
+            <td>Message ka color dynamically change karta hai: error red, success green.</td>
+          </tr>
+        </table>
+      </section>
+
       <section id="why-js">
         <h2>JavaScript Kyu Use Karte Hain?</h2>
         <p>JavaScript ka main kaam page ko interactive banana hai. Agar website sirf information show kare, toh HTML and CSS enough ho sakte hain. Lekin jaise hi user ke action par page ko response dena ho, JavaScript chahiye. Example: user ne password chhota type kiya toh error show karna, button click par popup open karna, quantity change par total price update karna, search box mein type karte hi results filter karna.</p>
